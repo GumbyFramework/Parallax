@@ -6,7 +6,11 @@ This UI module applies a simple background image parallaxing effect. Check out t
 Installation
 ------------
 
-Move gumby.parallax.js into your Gumby project and include the file in the same fashion as your other UI modules, after gumby.js and before gumby.init.js. In production you should minify JavaScript files into a single optimized gumby.min.js file, ensuring the order (gumby.js, UI modules, gumby.init.js) is retained. 
+A bower package is available to install this repo into your project. We recommend using this method to install Gumby and any extra UI modules, however you can alternatively move the individuals files into your project.
+
+	$ bower install gumby-parallax
+
+Include gumby.parallax.js in the same fashion as your other UI modules, after gumby.js and before gumby.init.js. In production you should minify JavaScript files into a single optimized gumby.min.js file, ensuring the order (gumby.js, UI modules, gumby.init.js) is retained. 
 
 	<!--
 	Include gumby.js followed by UI modules.
@@ -14,7 +18,8 @@ Move gumby.parallax.js into your Gumby project and include the file in the same 
 	<script src="js/libs/gumby.js"></script>
 	<script src="js/libs/ui/gumby.skiplink.js"></script>
 	<script src="js/libs/ui/gumby.toggleswitch.js"></script>
-	<script src="js/libs/ui/gumby.parallax.js"></script>
+	<!-- included from Bower's components directory -->
+	<script src="components/gumby-parallax/gumby.parallax.js"></script>
 	<script src="js/libs/gumby.init.js"></script>
 	
 	<!-- In production minifiy and combine the above files into gumby.min.js -->
@@ -22,11 +27,12 @@ Move gumby.parallax.js into your Gumby project and include the file in the same 
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
 	
-Move _parallax.scss into your Gumby project in sass/ui. Then import the file inside sass/ui/_all.scss in the same fashion as the other imports. Once you compile sass you are good to go.
+Import the _parallax.scss partial inside sass/ui/_all.scss in the same fashion as the other imports. Once you compile sass you are good to go.
 
 	@import "video";
 	@import "toggles";
-	@import "parallax";
+	// imported from Bower's components directory
+	@import "../../components/parallax";
 
 
 Usage
