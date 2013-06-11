@@ -27,12 +27,10 @@ Include gumby.parallax.js in the same fashion as your other UI modules, after gu
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
 	
-Import the _parallax.scss partial inside sass/ui/_all.scss in the same fashion as the other imports. Once you compile sass you are good to go.
+Import the _parallax.scss partial in the same fashion as your other imports. Once you compile sass you are good to go.
 
-	@import "video";
-	@import "toggles";
 	// imported from Bower's components directory
-	@import "../../components/parallax";
+	@import "../components/parallax";
 
 
 Usage
