@@ -6,7 +6,7 @@
 	'use strict';
 
 	// define module class and init only if we're on touch devices
-	if(Modernizr.touch) {
+	if(Gumby.gumbyTouch) {
 		return;
 	}
 
