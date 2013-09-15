@@ -12,6 +12,8 @@
 
 	function Parallax($el) {
 
+		Gumby.debug('Initializing Parallax', $el);
+
 		this.$el = $el;
 		this.$holder = {};
 		this.ratio = this.offset = 0;
