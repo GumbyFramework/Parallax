@@ -13,6 +13,31 @@
 	function Parallax($el) {
 
 		this.$el = $el;
+		this.$holder = {};
+		this.ratio = this.offset = 0;
+
+		var scope = this;
+
+		this.setup();
+
+		// re-initialize module
+		this.$el.on('gumby.initialize', function() {
+			Gumby.debug('Re-initializing Parallax', scope.$el);
+			scope.setup();
+		});
+
+		// set starting position of background image
+		this.setPosition();
+
+		this.$holder.scroll(function() {
+			scope.scroll();
+		});
+
+		// this should update windows that load scrolled
+		this.scroll();
+	}
+
+	Parallax.prototype.setup = function() {
 		this.$holder = Gumby.selectAttr.apply(this.$el, ['holder']);
 		this.ratio = Number(Gumby.selectAttr.apply(this.$el, ['parallax'])) || 1;
 		this.offset = Number(Gumby.selectAttr.apply(this.$el, ['offset'])) || 0;
@@ -34,19 +59,7 @@
 			// calculate starting bg position
 			this.startPos -= this.$holder.offset().top;
 		}
-
-		var scope = this;
-
-		// set starting position of background image
-		this.setPosition();
-
-		this.$holder.scroll(function() {
-			scope.scroll();
-		});
-
-		// this should update windows that load scrolled
-		this.scroll();
-	}
+	};
 
 	// update bg position based on scroll and parallax ratio
 	Parallax.prototype.scroll = function() {
