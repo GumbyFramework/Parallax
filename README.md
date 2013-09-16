@@ -1,7 +1,7 @@
 Gumby Parallax Module
 =====================
 
-This UI module applies a simple background image parallaxing effect. Check out the demo at [gumbyframework.com/demo](http://gumbyframework.com/demo).
+This UI module applies a simple background image parallaxing effect. For more detailed documentation please check out the [Gumby docs](http://gumbyframework.com).
 
 Installation
 ------------
