@@ -1,9 +1,9 @@
 .parallax {
-  background-attachment: fixed;
+  background-attachment: fixed !important;
 }
 
 .oldie, .ie9 {
 	.parallax {
-		background-attachment: static;
+		background-attachment: static !important;
 	}
 }
