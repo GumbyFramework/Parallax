@@ -75,20 +75,15 @@
 
 	// add initialisation
 	Gumby.addInitalisation('parallax', function() {
-		// wait for window to load as this could effect position of element
-		$(window).load(function() {
-			setTimeout(function() {
-				$('.parallax').each(function() {
-					var $this = $(this);
-					// this element has already been initialized
-					if($this.data('isParallax')) {
-						return true;
-					}
-					// mark element as initialized
-					$this.data('isParallax', true);
-					new Parallax($this);
-				});
-			}, 200);
+		$('.parallax').each(function() {
+			var $this = $(this);
+			// this element has already been initialized
+			if($this.data('isParallax')) {
+				return true;
+			}
+			// mark element as initialized
+			$this.data('isParallax', true);
+			new Parallax($this);
 		});
 	});
 
