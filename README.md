@@ -42,6 +42,8 @@ Using the parallax module is simple. Add a class of `parallax` to the element en
 	<!-- bg will be positioned at 0 0 when element is 100px from top of window -->
 	<div class="parallax" gumby-parallax="0.5" gumby-offset="100"></div>
 
+If you have a large and complex DOM, the position of the element may depend on the window being fully loaded. In this case we recommend manually initializing Parallax after window load.
+
 
 **MIT Open Source License**
 
