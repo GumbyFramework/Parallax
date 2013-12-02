@@ -44,6 +44,13 @@
 		this.ratio = Number(Gumby.selectAttr.apply(this.$el, ['parallax'])) || 1;
 		this.offset = Number(Gumby.selectAttr.apply(this.$el, ['offset'])) || 0;
 
+		// find background x position, has to be filtered from 'x y'
+		this.xPos = this.$el.css('backgroundPosition').split(' ')[0];
+		// if not set in CSS it'll be 0%, default to 50%
+		if(!this.xPos || this.xPos === '0%') {
+			this.xPos = '50%';
+		}
+
 		// calculate starting bg position
 		this.startPos = ((this.$el.offset().top - this.offset) * this.ratio);
 
@@ -70,7 +77,7 @@
 
 	// set background y axis position with 50% x axis
 	Parallax.prototype.setPosition = function(yPos) {
-		this.$el.css('backgroundPosition', '50% '+yPos+'px');
+		this.$el.css('backgroundPosition', this.xPos+' '+yPos+'px');
 	};
 
 	// add initialisation
