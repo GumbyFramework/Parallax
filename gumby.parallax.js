@@ -52,7 +52,7 @@
 		}
 
 		// calculate starting bg position
-		this.startPos = ((this.$el.offset().top - this.offset) * this.ratio);
+		this.startPos = ((this.$el.position().top - this.offset) * this.ratio);
 
 		// find holder element
 		if(this.$holder) {
@@ -66,7 +66,7 @@
 		// holder is set and not window so add to offset calc
 		} else {
 			// calculate starting bg position
-			this.startPos -= this.$holder.offset().top;
+			this.startPos -= this.$holder.position().top;
 		}
 	};
 
