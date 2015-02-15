@@ -1,7 +1,7 @@
 /**
 * Gumby Parallax
 */
-!function() {
+!function($) {
 
 	'use strict';
 
@@ -102,4 +102,4 @@
 			Gumby.initialize('parallax');
 		}
 	});
-}();
+}(jQuery);
